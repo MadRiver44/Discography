@@ -16,11 +16,11 @@ class Search extends Component {
     return (
       <div className="search-container">
         <form className="form-container">
-          <div className="text-button">
-            <label htmlFor="searchbar" />
-            <input type="search" id="searchbar" />
-          </div>
-        <Button handleClick={this.handleClick} />
+          {/*<div className="text-button"> */}
+          <label htmlFor="searchbar" />
+          <input type="search" id="searchbar" placeHolder="Search"/>
+          {/* </div> */}
+          <Button handleClick={this.handleClick} />
         </form>
       </div>
     );
