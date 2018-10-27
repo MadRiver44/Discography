@@ -69,12 +69,6 @@
   height: 100px;
 }
 
-// .text-button {
-//   display: flex;
-//   justify-content: center;
-//   align-content: center;
-// }
-
 .form-container {
   display: flex;
   flex-direction: row;
@@ -83,19 +77,10 @@
   align-items: space-between;
   width: 600px;
 }
-// input[type='search'] {
-//   border-radius: 12px;
-//   width: 300px;
-//   height: 50px;
-//   background: #fafafa;
-//   border: none;
-//   color: #131313;
-//   padding-left: 45px;
-//   font-size: 20px;
-// }
+
 label,
 input {
-  vertical-align: basline;
+  vertical-align: baseline;
   color: #737373;
 }
 
@@ -115,27 +100,29 @@ input[type='search']:focus {
 }
 
 .button {
-  height: 50px;
-  width: 110px;
-  font-family: 'Roboto', sans-serif;
+  background-color: #222;
   font-size: 20px;
-  border-radius: 12px;
-  margin-left: 20px;
+  margin-left: 5px;
+  outline: none;
+  border: none;
+}
 
-  &:hover {
-    background-color: green;
-  }
+form .button:hover {
+  font-size: 40px;
+  color: hsl(99, 84%, 50%);
 }
 
 // ------------- Album Container  --------------------------
 
 #album-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 20px, 20px, 20px, 20px;
   padding: 20px;
   height: 100%;
   max-width: 100%;
+  color: white;
   //background-color: #eae1df;
 }
