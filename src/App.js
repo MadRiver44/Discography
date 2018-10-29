@@ -22,7 +22,9 @@ class App extends Component {
   getArtistInfo() {
     const { query } = this.state;
     axios
-      .get(API + query + entityType)
+      .get(API + query + entityType, {
+        headers: { crossDomain: true, 'Content-Type': 'application/json' },
+      })
       .then(response => response.data)
       .then(data => this.setState({ data: data.results }));
   }
