@@ -1,7 +1,9 @@
 import React from 'react';
-import Button from './Button.js';
+import PropTypes from 'prop-types';
+import Button from './Button';
 
-const Search = props => {
+const Search = (props) => {
+  const { query, handleChange, handleClick } = props;
   return (
     <div className="search-container">
       <form className="form-container">
@@ -10,13 +12,19 @@ const Search = props => {
           type="search"
           id="searchbar"
           placeholder="Search"
-          value={props.query}
-          onChange={props.handleChange}
+          value={query}
+          onChange={handleChange}
         />
-        <Button handleClick={props.handleClick} />
+        <Button handleClick={handleClick} />
       </form>
     </div>
   );
 };
 
 export default Search;
+
+Search.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  query: PropTypes.string,
+};

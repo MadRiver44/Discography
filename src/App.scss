@@ -8,7 +8,7 @@
 
   .title {
     font-size: 50px;
-    font-family: 'Roboto';
+    font-family: 'Roboto' sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,17 +16,20 @@
   }
 
   form input[type='search'] {
-    border-radius: 12px;
     width: 140px;
     height: 40px;
   }
-  form .button {
-    height: 40px;
-    width: 100px;
-    font-family: 'Roboto';
-    font-size: 18px;
-    border-radius: 12px;
-    margin-left: 20px;
+  .button {
+    background-color: #222;
+    font-size: 20px;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+  }
+
+  form .button:hover {
+    font-size: 40px;
+    color: hsl(99, 84%, 50%);
   }
 }
 
@@ -88,7 +91,8 @@ input[type='search'] {
   border: 2px solid #737373;
   border-width: 0 0 3px;
   background-color: transparent;
-  font: 22px 'Open Sans', sans-serif;
+  font: 22px 'Roboto', sans-serif;
+  text-align: center;
   padding: 0.125em 0.225em;
   width: 85%;
 }
@@ -116,7 +120,8 @@ form .button:hover {
 
 #album-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 20px, 20px, 20px, 20px;
@@ -124,5 +129,16 @@ form .button:hover {
   height: 100%;
   max-width: 100%;
   color: white;
-  //background-color: #eae1df;
+}
+
+ul li {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  text-align: left;
+  text-decoration: none;
+  font-family: 'Roboto' sans-serif;
+  font-size: 15px;
+  list-style: none;
+  color: hsl(99, 84%, 50%);
 }

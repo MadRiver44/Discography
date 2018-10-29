@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.scss';
-import Search from './Search.js';
-import Albums from './Albums.js';
 import axios from 'axios';
+import './App.scss';
+import Search from './Search';
+import Albums from './Albums';
 
-const API = `https://itunes.apple.com/search?term=`; //${ARTIST_NAME}
-const DEFAULT_QUERY = `jay-z`;
+const API = `https://itunes.apple.com/search?term=`; // ${ARTIST_NAME}
 const entityType = `&entity=album`;
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      hits: [],
       query: '',
     };
     this.handleClick = this.handleClick.bind(this);
@@ -22,8 +20,9 @@ class App extends Component {
   }
 
   getArtistInfo() {
+    const { query } = this.state;
     axios
-      .get(API + this.state.query + entityType)
+      .get(API + query + entityType)
       .then(response => response.data)
       .then(data => this.setState({ data: data.results }));
   }
@@ -38,16 +37,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
+    const { query, data } = this.state;
     return (
       <div className="App">
         <header className="title elegantShadow">Discography</header>
-        <Search
-          handleClick={this.handleClick}
-          handleChange={this.handleChange}
-          value={this.state.query}
-        />
-        <Albums items={this.state.data} />
+        <Search handleClick={this.handleClick} handleChange={this.handleChange} value={query} />
+        <Albums items={data} />
       </div>
     );
   }
